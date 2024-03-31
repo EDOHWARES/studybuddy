@@ -1,0 +1,12 @@
+<h3>Recent Activities</h3>
+<hr>
+{% for message in room_messages %}
+    <div style="border: 1px solid gray; border-radius: 6px; padding: .5rem; margin-bottom: 1rem;">
+        <a href="{% url 'delete-activity' message.id %}">Delete</a>
+        <small><a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a> {{message.created|timesince}} ago :</small>
+        <small>replied to post {{message.room}}</small>
+        <p>
+            {{message}}...
+        </p>
+    </div>
+{% endfor %}

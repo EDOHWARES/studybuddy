@@ -1,0 +1,7 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        <p>You're not allowed to take this action <a href="{{request.META.HTTP_REFERER}}">Go back</a></p>
+    </div>
+{% endblock content %}
